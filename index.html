@@ -390,6 +390,17 @@ body {
       <div class="settings-row"><span class="settings-row-label">脂肪目标 g</span><input class="settings-row-input" id="set-fat" type="number" value="55"></div>
       <div class="settings-row"><span class="settings-row-label">碳水目标 g</span><input class="settings-row-input" id="set-carb" type="number" value="150"></div>
     </div>
+    <div class="settings-section">
+      <div class="settings-title">AI 营养识别</div>
+      <div class="api-key-notice">
+        拍照识别需要 Anthropic API Key。<br>
+        前往 <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> 获取。<br>
+        Key 只存在本地，不会上传到任何服务器。
+      </div>
+      <div class="api-key-input-wrap">
+        <input class="api-key-input" id="set-apikey" type="password" placeholder="sk-ant-...">
+      </div>
+    </div>
     <div style="padding: 0 16px;">
       <button class="btn-primary" onclick="saveSettings()">保存设置</button>
     </div>
@@ -613,9 +624,8 @@ body {
 // 配置
 // ══════════════════════════════════════
 const API = 'https://script.google.com/macros/s/AKfycbxSBXzxIoc36OffrrV1-iT5sL3k89CTVIwfo2au8EGVMrfn-oKeFxsx3zSSPGAt-k_nhg/exec';
-const ANTHROPIC_API_KEY = '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'; // 换成真实Key
 
-let settings = { kcal: 1700, protein: 150, fat: 55, carb: 150 };
+let settings = { kcal: 1700, protein: 150, fat: 55, carb: 150, apiKey: '' };
 let aiParsed = null;
 let selectedFeeling = '→';
 let selectedExercise = '';
@@ -642,6 +652,7 @@ function loadSettings() {
   document.getElementById('set-protein').value = settings.protein;
   document.getElementById('set-fat').value = settings.fat;
   document.getElementById('set-carb').value = settings.carb;
+  document.getElementById('set-apikey').value = settings.apiKey || '';
 }
 
 function saveSettings() {
@@ -649,6 +660,7 @@ function saveSettings() {
   settings.protein = parseInt(document.getElementById('set-protein').value) || 150;
   settings.fat = parseInt(document.getElementById('set-fat').value) || 55;
   settings.carb = parseInt(document.getElementById('set-carb').value) || 150;
+  settings.apiKey = document.getElementById('set-apikey').value.trim();
   localStorage.setItem('fitlog_settings', JSON.stringify(settings));
   renderFoodList();
   alert('✓ 已保存');
@@ -1136,6 +1148,10 @@ async function analyzeImage(dataUrl) {
   const resultDiv = document.getElementById('ai-result');
   const resultText = document.getElementById('ai-result-text');
   resultDiv.classList.add('show');
+  if (!settings.apiKey) {
+    resultText.textContent = '请先在设置页填入 Anthropic API Key';
+    return;
+  }
   resultText.innerHTML = '<span class="spinner"></span> AI 识别中...';
   const base64 = dataUrl.split(',')[1];
   const mediaType = dataUrl.split(';')[0].split(':')[1];
@@ -1148,7 +1164,7 @@ async function analyzeImage(dataUrl) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': ANTHROPIC_API_KEY,
+        'x-api-key': settings.apiKey,
         'anthropic-version': '2023-06-01',
         'anthropic-dangerous-direct-browser-access': 'true'
       },
@@ -1165,6 +1181,10 @@ async function analyzeImage(dataUrl) {
       })
     });
     const data = await response.json();
+    if (!data.content || !data.content[0]) {
+      resultText.textContent = '识别失败：' + (data.error?.message || JSON.stringify(data));
+      return;
+    }
     const text = data.content[0].text.trim();
     const match = text.match(/\{[\s\S]*\}/);
     if (match) {
