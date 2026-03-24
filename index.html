@@ -29,7 +29,7 @@ body {
 }
 .page-header h1 { font-size: 22px; font-weight: 800; }
 .page-header h1 span { color: #7fff6a; }
-.today-date { font-size: 12px; color: #555; }
+.today-date { font-size: 12px; color: #7a9a7a; }
 
 #bottom-nav {
   position: fixed; bottom: 0; left: 0; right: 0;
@@ -38,7 +38,7 @@ body {
   display: flex; height: 64px; z-index: 100;
 }
 #bottom-nav button {
-  flex: 1; border: none; background: none; font-size: 11px; color: #555;
+  flex: 1; border: none; background: none; font-size: 11px; color: #6a8a6a;
   cursor: pointer; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 4px;
   font-family: sans-serif; transition: color 0.2s;
@@ -53,7 +53,7 @@ body {
 .card-header {
   padding: 14px 16px; border-bottom: 1px solid #222;
   font-size: 11px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 1px; color: #555;
+  text-transform: uppercase; letter-spacing: 1px; color: #7a9a7a;
   display: flex; align-items: center; justify-content: space-between;
 }
 .card-header-btn {
@@ -66,8 +66,8 @@ body {
 .macro-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .macro-item { background: #1e1e1e; border-radius: 12px; padding: 10px 6px; text-align: center; }
 .macro-val { font-size: 18px; font-weight: 700; line-height: 1; }
-.macro-label { font-size: 10px; color: #555; margin-top: 4px; }
-.macro-goal { font-size: 10px; color: #444; margin-top: 2px; }
+.macro-label { font-size: 10px; color: #7a9a7a; margin-top: 4px; }
+.macro-goal { font-size: 10px; color: #5a7a5a; margin-top: 2px; }
 .progress-bar { height: 5px; background: #222; border-radius: 3px; margin-top: 6px; overflow: hidden; }
 .progress-fill { height: 100%; border-radius: 3px; transition: width 0.4s ease; }
 
@@ -79,9 +79,9 @@ body {
 .food-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: #7fff6a; }
 .food-info { flex: 1; }
 .food-name { font-size: 14px; font-weight: 500; }
-.food-macros { font-size: 11px; color: #555; margin-top: 2px; }
-.food-kcal { font-size: 13px; color: #888; font-weight: 600; }
-.item-del { background: none; border: none; color: #333; cursor: pointer; font-size: 18px; padding: 4px; }
+.food-macros { font-size: 11px; color: #7a9a7a; margin-top: 2px; }
+.food-kcal { font-size: 13px; color: #a0a0a0; font-weight: 600; }
+.item-del { background: none; border: none; color: #4a4a4a; cursor: pointer; font-size: 18px; padding: 4px; }
 
 .workout-item {
   display: flex; align-items: center; gap: 10px;
@@ -90,14 +90,14 @@ body {
 .workout-item:last-child { border-bottom: none; }
 .workout-info { flex: 1; }
 .workout-name { font-size: 14px; font-weight: 600; }
-.workout-detail { font-size: 11px; color: #555; margin-top: 2px; }
+.workout-detail { font-size: 11px; color: #7a9a7a; margin-top: 2px; }
 .feeling-badge {
   font-size: 16px; width: 28px; height: 28px;
   display: flex; align-items: center; justify-content: center;
   background: #1e1e1e; border-radius: 8px;
 }
 
-.empty-state { text-align: center; padding: 30px 0; color: #444; font-size: 13px; }
+.empty-state { text-align: center; padding: 30px 0; color: #6a8a6a; font-size: 13px; }
 .empty-state .empty-icon { font-size: 32px; margin-bottom: 8px; }
 
 .fab {
@@ -132,7 +132,7 @@ body {
 .modal-title { font-size: 18px; font-weight: 700; padding: 12px 20px 16px; }
 
 .form-group { padding: 0 20px; margin-bottom: 14px; }
-.form-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #555; margin-bottom: 6px; display: block; }
+.form-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #7a9a7a; margin-bottom: 6px; display: block; }
 .form-input {
   width: 100%; background: #1e1e1e; border: 1px solid #2a2a2a;
   border-radius: 10px; padding: 12px 14px; color: #f0f0f0;
@@ -149,7 +149,7 @@ body {
 .btn-primary:active { opacity: 0.8; }
 .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
 .btn-secondary {
-  background: #1e1e1e; color: #888; border: 1px solid #2a2a2a;
+  background: #1e1e1e; color: #a0a0a0; border: 1px solid #2a2a2a;
   border-radius: 12px; padding: 14px 20px; font-size: 15px;
   cursor: pointer; font-family: sans-serif;
 }
@@ -162,7 +162,7 @@ body {
   font-size: 12px; color: #7fff6a; display: none;
 }
 .last-record.show { display: block; }
-.last-record-title { font-size: 10px; color: #555; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px; }
+.last-record-title { font-size: 10px; color: #7a9a7a; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px; }
 
 /* 动作选择列表 */
 .exercise-list {
@@ -231,7 +231,7 @@ body {
 
 /* 设置页 */
 .settings-section { padding: 0 16px; margin-bottom: 20px; }
-.settings-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #555; margin-bottom: 10px; padding: 0 4px; }
+.settings-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #7a9a7a; margin-bottom: 10px; padding: 0 4px; }
 .settings-row {
   background: #161616; border: 1px solid #222; border-radius: 12px;
   padding: 14px 16px; display: flex; align-items: center;
@@ -253,20 +253,20 @@ body {
 .api-key-input:focus { border-color: #7fff6a; }
 .api-key-notice {
   background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px;
-  padding: 12px 14px; font-size: 12px; color: #666; margin-bottom: 10px; line-height: 1.6;
+  padding: 12px 14px; font-size: 12px; color: #8aaa8a; margin-bottom: 10px; line-height: 1.6;
 }
 .api-key-notice a { color: #7fff6a; }
 
 /* 历史页 */
 .history-date-group { margin-bottom: 8px; }
-.history-date-label { font-size: 11px; color: #555; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 8px 20px 6px; }
+.history-date-label { font-size: 11px; color: #7a9a7a; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 8px 20px 6px; }
 .history-summary {
   background: #161616; border: 1px solid #222; border-radius: 12px;
   margin: 0 16px; padding: 12px 14px; display: flex; gap: 12px;
 }
 .history-stat { flex: 1; text-align: center; }
 .history-stat-val { font-size: 16px; font-weight: 700; }
-.history-stat-label { font-size: 10px; color: #555; margin-top: 2px; }
+.history-stat-label { font-size: 10px; color: #7a9a7a; margin-top: 2px; }
 
 /* 同步状态 */
 .sync-badge {
@@ -550,8 +550,8 @@ body {
 
     <div style="display:flex;gap:10px;padding:0 20px;margin-bottom:14px">
       <div style="flex:1"><label class="form-label" style="display:block;margin-bottom:6px">重量 kg</label><input class="form-input" id="ex-weight" type="text" placeholder="如：50"></div>
-      <div style="flex:1"><label class="form-label" style="display:block;margin-bottom:6px">组数</label><input class="form-input" id="ex-sets" type="number" placeholder="4"></div>
       <div style="flex:1"><label class="form-label" style="display:block;margin-bottom:6px">次数</label><input class="form-input" id="ex-reps" type="number" placeholder="12"></div>
+      <div style="flex:1"><label class="form-label" style="display:block;margin-bottom:6px">组数</label><input class="form-input" id="ex-sets" type="number" placeholder="4"></div>
     </div>
 
     <div class="form-group">
@@ -936,7 +936,7 @@ async function selectExercise(name, el) {
       const dateObj = new Date(d.date);
 const dateOnly = `${dateObj.getFullYear()}-${String(dateObj.getMonth()+1).padStart(2,'0')}-${String(dateObj.getDate()).padStart(2,'0')}`;
 document.getElementById('last-record-text').textContent =
-  `${dateOnly} · ${d.weight ? d.weight+'kg · ' : ''}${d.sets}次 × ${d.reps}组`;
+  `${dateOnly} · ${d.weight ? d.weight+'kg · ' : ''}${d.reps}次 × ${d.sets}组`;
       // 自动填入上次数据
       document.getElementById('ex-weight').value = d.weight || '';
       document.getElementById('ex-sets').value = d.sets || '';
@@ -1031,7 +1031,7 @@ function renderWorkoutList() {
         <div class="workout-item">
           <div class="workout-info">
             <div class="workout-name">${d.exercise}</div>
-            <div class="workout-detail">${d.weight?d.weight+'kg · ':''}${d.sets||'-'}组 × ${d.reps||'-'}次</div>
+            <div class="workout-detail">${d.weight?d.weight+'kg · ':''}${d.reps||'-'}次 × ${d.sets||'-'}组</div>
           </div>
           <div class="feeling-badge">${feelingEmoji[d.feeling]||'😐'}</div>
           <button class="item-del" onclick="deleteWorkoutEntry(${d.id})">×</button>
@@ -1111,17 +1111,22 @@ function renderHistory() {
   container.innerHTML = dates.map(date => {
     const foods = foodData.filter(d => d.date === date);
     const workouts = workoutData.filter(d => d.date === date);
-    const kcal = Math.round(foods.reduce((s,d)=>s+d.kcal,0));
-    const protein = Math.round(foods.reduce((s,d)=>s+d.protein,0));
+    // 只计算摄入（排除消耗条目）
+    const intake = foods.filter(d => d.type !== 'burn');
+    const kcal = Math.round(intake.reduce((s,d)=>s+d.kcal,0));
+    const protein = Math.round(intake.reduce((s,d)=>s+d.protein,0));
+    // 饮食条目只算摄入数量，消耗单独算
+    const foodCount = intake.length;
+    const burnCount = foods.filter(d => d.type === 'burn').length;
     const label = new Date(date).toLocaleDateString('zh-CN',{month:'long',day:'numeric',weekday:'short'});
     return `
       <div class="history-date-group">
         <div class="history-date-label">${label}</div>
         <div class="history-summary">
-          <div class="history-stat"><div class="history-stat-val" style="color:#ffd85c">${kcal}</div><div class="history-stat-label">kcal</div></div>
+          <div class="history-stat"><div class="history-stat-val" style="color:#ffd85c">${kcal}</div><div class="history-stat-label">kcal摄入</div></div>
           <div class="history-stat"><div class="history-stat-val" style="color:#7fff6a">${protein}g</div><div class="history-stat-label">蛋白质</div></div>
-          <div class="history-stat"><div class="history-stat-val" style="color:#888">${foods.length}</div><div class="history-stat-label">条饮食</div></div>
-          <div class="history-stat"><div class="history-stat-val" style="color:#6ab8ff">${workouts.length}</div><div class="history-stat-label">条训练</div></div>
+          <div class="history-stat"><div class="history-stat-val" style="color:#888">${foodCount}${burnCount>0?'<span style="color:#ff6b6b;font-size:12px">+'+burnCount+'🔥</span>':''}</div><div class="history-stat-label">饮食</div></div>
+          <div class="history-stat"><div class="history-stat-val" style="color:#6ab8ff">${workouts.length}</div><div class="history-stat-label">训练</div></div>
         </div>
       </div>
     `;
